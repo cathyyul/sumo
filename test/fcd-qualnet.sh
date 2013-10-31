@@ -17,7 +17,7 @@ do
     sed -n "/<timestep time=\"$time\">/,/<\/timestep>/p" $FCDFILE > oneStepone
     grep 'vehicle' oneStepone > oneSteptwo
     time=$i.0
-    awk -v tm="$time" '{print $2, tm," (", $3, $4, "0)"}' oneSteptwo >> tmpfinal
+    awk -v tm="$time" '{print $2, tm, $3, $4, "0"}' oneSteptwo >> tmpfinal
     rm oneStepone
     rm oneSteptwo
 done
@@ -28,7 +28,8 @@ python $SUMOPATH/tools/bin/fixZeroMo.py qualnettwo > zeroQualnet
 python $SUMOPATH/tools/bin/fixLeftMo.py qualnettwo > leftQualnet
 cat zeroQualnet > unsortqualnet
 cat leftQualnet >> unsortqualnet
-sort -k2 -g unsortqualnet > $OUTPUTFILE 
+sort -k2 -g unsortqualnet > sortqualnet
+awk '{print $1, $2, "(", $3, $4, $5, ")"}' sortqualnet > $OUTPUTFILE 
 
 rm tmpfinal
 rm qualnetone
@@ -36,3 +37,4 @@ rm qualnettwo
 rm zeroQualnet
 rm leftQualnet
 rm unsortqualnet
+rm sortqualnet
