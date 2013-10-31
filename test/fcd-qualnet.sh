@@ -17,7 +17,7 @@ do
     sed -n "/<timestep time=\"$time\">/,/<\/timestep>/p" $FCDFILE > oneStepone
     grep 'vehicle' oneStepone > oneSteptwo
     time=$i.0
-    awk -v tm="$time" '{print $2, tm, $3, $4, "0"}' oneSteptwo >> tmpfinal
+    awk -v tm="$time" '{print $2, tm," (", $3, $4, "0)"}' oneSteptwo >> tmpfinal
     rm oneStepone
     rm oneSteptwo
 done
