@@ -10,3 +10,5 @@ python $SUMOPATH/tools/trip/randomTrips.py -n $NAME.net.xml -e $TRIPTIME -p $PER
 duarouter -t $NAME.trip.xml -n $NAME.net.xml -e $ROUTETIME -o $NAME.rou.xml
 
 sumo -c $NAME.sumocfg --fcd-output $SCENARIO.fcd.xml
+
+sh $SUMOPATH/tools/bin/fcd-qualnet.sh $SUMOPATH $SCENARIO.fcd.xml $SCENARIO.mob
