@@ -11,6 +11,8 @@
  <route id ="alter6" edges="1/1to2/1 2/1to3/1"/>
  <route id ="alter7" edges="3/3to2/3 2/3to2/2"/>
  <route id ="alter8" edges="3/3to3/2 3/2to2/2"/>
+ <route id ="alter9" edges="1/2to2/2 2/2to2/1 2/1to3/1"/>
+ <route id ="alter10" edges="3/1to3/2 3/2to2/2"/>
 <rerouter id="1" edges="1/2to1/3">
 	<interval begin="0" end="800">
 		<routeProbReroute id="alter1"/>
@@ -67,4 +69,21 @@
 		
         </interval>
 </rerouter>
+
+<rerouter id="9" edges="1/2to2/2">
+	<interval begin="0" end="800">
+		<routeProbReroute id="alter9"/>
+                
+        </interval>
+</rerouter>
+
+<rerouter id="10" edges="3/1to3/2">
+        <interval begin="0" end="800">
+                <routeProbReroute id="alter10"/>
+		
+        </interval>
+</rerouter>
+
+
+
 </additional>
