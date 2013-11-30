@@ -3,8 +3,8 @@
 from __future__ import with_statement
 import sys
 
-outx=800
-outy=800
+outx=1000
+outy=1000
 outz=0
 
 def addhelp(filename=''):
