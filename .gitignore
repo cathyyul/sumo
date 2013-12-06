@@ -1,2 +1,13 @@
 *.a
 *.pyc
+*.o
+*Makefile
+*Makefile.in
+
+aclocal.m4
+config.guess
+configure
+ltmain.sh
+src/config.h.in
+
+
